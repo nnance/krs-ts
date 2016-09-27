@@ -75,7 +75,7 @@
     ],
     "quotemark": [
       true,
-      "single",
+      "double",
       "avoid-escape"
     ],
     "radix": true,
