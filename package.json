@@ -4,7 +4,8 @@
   "description": "Example Recommendation System",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "typings": "typings i",
+    "test": "mocha ./dist/test/*.test.js"
   },
   "author": "Nick Nance",
   "license": "ISC",

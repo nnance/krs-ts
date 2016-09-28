@@ -12,7 +12,10 @@ export class OfferLoader {
   public async getOffers(user: User): Promise<Offer[]> {
     return new Promise<Offer[]>(resolve => {
       const offers = this.plugins.map(plugin => plugin.getOffers(user))
-      Promise.all(offers).then(results => resolve(results))
+      Promise.all(offers).then(results => {
+        const flattened = results.reduce((a, b) => a.concat(b), [])
+        resolve(flattened)
+      })
     })
   }
 }

@@ -5,16 +5,18 @@ export interface User {
 }
 
 export interface Offer {
-  partnerName: String
-  likelyHood: String
-}
-
-export interface CreditCardOffer extends Offer {
-  apr: Number
-  rewards: Boolean
+  id: number
+  provider: String
+  minimumCreditScore: number
+  maximumCreditScore: number
 }
 
 export interface PersonalLoanOffer extends Offer {
-  apr: Number
-  length: Number
+  term: number
+  maximumAmount: number
+}
+
+export interface AutoOffer extends Offer {
+  term: number
+  maximumAmount: number
 }

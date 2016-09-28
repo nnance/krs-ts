@@ -1,0 +1,27 @@
+
+[
+ {
+    "creditCard":{
+       "id":1,
+       "provider":"CapitalOne",
+       "minimumCreditScore":300,
+       "maximumCreditScore":700
+    }
+ },
+ {
+    "creditCard":{
+       "id":2,
+       "provider":"CapitalOne",
+       "minimumCreditScore":600,
+       "maximumCreditScore":700
+    }
+ },
+ {
+    "creditCard":{
+       "id":3,
+       "provider":"Chase",
+       "minimumCreditScore":300,
+       "maximumCreditScore":900
+    }
+ }
+]
