@@ -2,6 +2,7 @@ export interface User {
   name: string
   ssn: string
   creditScore: number
+  autoLoanBalance: number
 }
 
 export interface Offer {
@@ -9,6 +10,7 @@ export interface Offer {
   provider: String
   minimumCreditScore: number
   maximumCreditScore: number
+  type: string
 }
 
 export interface PersonalLoanOffer extends Offer {

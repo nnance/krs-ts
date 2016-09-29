@@ -1,5 +1,5 @@
 import {expect} from "chai"
-import {User} from "../interfaces"
+import {User, Offer} from "../interfaces"
 import {CreditCardPlugin} from "../offers/CCPlugin"
 
 describe("CCPlugin", () => {
@@ -7,6 +7,7 @@ describe("CCPlugin", () => {
     name: "Test User",
     ssn: "111111111",
     creditScore: 600,
+    autoLoanBalance: 0,
   }
 
   describe("when instatiated", () => {
@@ -20,10 +21,17 @@ describe("CCPlugin", () => {
   })
 
   describe("when loding offers", () => {
-    const plugin = new CreditCardPlugin()
-    it("expect 3 offers to be returned", async () => {
-      const offers = await plugin.getOffers(user)
+    let plugin
+    let offers: Offer[]
+    before(async () => {
+      plugin = new CreditCardPlugin()
+      offers = await plugin.getOffers(user)
+    })
+    it("expect 3 offers to be returned", () => {
       expect(offers.length).to.equal(3)
+    })
+    it("expect provider to be CapitalOne", () => {
+      expect(offers[0].provider).to.equal("CapitalOne")
     })
   })
 })
