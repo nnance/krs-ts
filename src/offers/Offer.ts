@@ -1,4 +1,4 @@
-import {User} from "../interfaces"
+import {User} from "../User"
 
 export class Offer {
   public id: number

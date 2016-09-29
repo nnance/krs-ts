@@ -1,5 +1,6 @@
 import {expect} from "chai"
-import {User, Offer} from "../interfaces"
+import {User} from "../User"
+import {Offer} from "../offers/Offer"
 import {CreditCardPlugin} from "../partners/CCPlugin"
 
 describe("CCPlugin", () => {

@@ -1,6 +1,7 @@
+import {User} from "../User"
 import {Offer} from "./Offer"
 
-export class PersonalLoan extends Offer {
+export class AutoLoan extends Offer {
   public term: number
   public maximumAmount: number
 
@@ -8,5 +9,9 @@ export class PersonalLoan extends Offer {
     super(data)
     this.term = data.term
     this.maximumAmount = data.maximumAmount
+  }
+
+  public isEligable(user: User): boolean {
+    return super.isEligable(user) && user.autoLoanBalance < this.maximumAmount
   }
 }
