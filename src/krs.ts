@@ -1,6 +1,7 @@
 import {User} from "./interfaces"
 import {OfferLoader} from "./partners/Loader"
 import {CreditCardPlugin} from "./partners/CCPlugin"
+import {PersonalLoanPlugin} from "./partners/PLPlugin"
 
 // function filterAutoLoands(user: User, offers: Offer[]): Offer[] {
 //   return offers.filter(offer => offer.type !== "autoLoan" || (offer.type === "autoLoan" && user.) )
@@ -15,6 +16,7 @@ const user: User = {
 
 const loader = new OfferLoader()
 loader.attach(new CreditCardPlugin())
+loader.attach(new PersonalLoanPlugin())
 
 loader.getOffers()
   .then(offers => {

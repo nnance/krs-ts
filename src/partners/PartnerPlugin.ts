@@ -3,6 +3,10 @@ import {Offer} from "../offers/Offer"
 
 const dataFile = "./data/offers.json"
 
+export interface OfferFactory {
+  (data: any): Offer
+}
+
 export abstract class PartnerPlugin {
 
   public abstract async getOffers(): Promise<Offer[]>
@@ -11,12 +15,12 @@ export abstract class PartnerPlugin {
     return
   }
 
-  protected async loadOffers(offerType: string): Promise<Offer[]> {
+  protected async loadOffers(offerType: string, factory: OfferFactory): Promise<Offer[]> {
     return new Promise<Offer[]>(resolve => {
       fs.readFile(dataFile, "utf8", (err, data) => {
         const offers = JSON.parse(data)
         const offersByType = offers.filter(offer => Object.keys(offer)[0] === offerType)
-        const transformedOffer = offersByType.map(offer => new Offer(offer[offerType]))
+        const transformedOffer = offersByType.map(offer => factory(offer[offerType]))
         resolve(transformedOffer)
       })
     })
