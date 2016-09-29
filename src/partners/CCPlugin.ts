@@ -1,5 +1,5 @@
 import {PartnerPlugin} from "./PartnerPlugin"
-import {Offer} from "../interfaces"
+import {Offer} from "../offers/Offer"
 
 export class CreditCardPlugin extends PartnerPlugin {
 

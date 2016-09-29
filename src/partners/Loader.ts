@@ -1,4 +1,4 @@
-import {Offer} from "../interfaces"
+import {Offer} from "../offers/Offer"
 import {PartnerPlugin} from "./PartnerPlugin"
 
 export class OfferLoader {

@@ -1,5 +1,5 @@
 import * as fs from "fs"
-import {Offer} from "../interfaces"
+import {Offer} from "../offers/Offer"
 
 const dataFile = "./data/offers.json"
 
@@ -16,11 +16,7 @@ export abstract class PartnerPlugin {
       fs.readFile(dataFile, "utf8", (err, data) => {
         const offers = JSON.parse(data)
         const offersByType = offers.filter(offer => Object.keys(offer)[0] === offerType)
-        const transformedOffer = offersByType.map(offer => {
-          let newOffer = offer[offerType]
-          newOffer.type = offerType
-          return newOffer
-        })
+        const transformedOffer = offersByType.map(offer => new Offer(offer[offerType]))
         resolve(transformedOffer)
       })
     })
