@@ -1,6 +1,6 @@
 import {expect} from "chai"
-import {OfferLoader} from "../offers/Loader"
-import {CreditCardPlugin} from "../offers/CCPlugin"
+import {OfferLoader} from "../partners/Loader"
+import {CreditCardPlugin} from "../partners/CCPlugin"
 
 class Plugin {
   public initCalled = false

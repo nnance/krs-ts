@@ -1,6 +1,6 @@
 import {expect} from "chai"
 import {User, Offer} from "../interfaces"
-import {CreditCardPlugin} from "../offers/CCPlugin"
+import {CreditCardPlugin} from "../partners/CCPlugin"
 
 describe("CCPlugin", () => {
   const user: User = {

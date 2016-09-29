@@ -4,6 +4,8 @@
   "description": "Example Recommendation System",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "lint": "tslint ./src/**/*.ts",
     "typings": "typings i",
     "test": "mocha ./dist/test/*.test.js"
   },
