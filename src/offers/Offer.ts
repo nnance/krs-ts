@@ -16,4 +16,8 @@ export class Offer {
   public isEligable(user: User): boolean {
     return user.creditScore >= this.minimumCreditScore && user.creditScore <= this.maximumCreditScore
   }
+
+  public likelyHood(user: User): number {
+    return this.maximumCreditScore - user.creditScore
+  }
 }
