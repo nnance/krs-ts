@@ -12,6 +12,6 @@ export class AutoLoan extends Offer {
   }
 
   public isEligable(user: User): boolean {
-    return super.isEligable(user) && user.autoLoanBalance < this.maximumAmount
+    return super.isEligable(user) && user.autoLoanBalance <= this.maximumAmount
   }
 }
